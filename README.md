@@ -37,7 +37,7 @@ Tested environment(s)
 
 Currently tested on:
 
-    Mac OSX 10.9 [Graphics card: HD Graphics 4000, Radeon HD 5750]
+    Mac OS X 10.9 [Graphics card: HD Graphics 4000, Radeon HD 5750]
 
 License
 -------
