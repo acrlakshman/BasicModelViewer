@@ -19,7 +19,7 @@ Please check the demo at [BMV demo page].
 Prerequisites
 -------------
 
-Install [Qt5] with opengl support. Make sure you have support for OpenGL 4.1. Apart from this, no other dependency on third
+Install [Qt5] with opengl support. Apart from this, no other dependency on third
 party libraries.
 
 Installation
