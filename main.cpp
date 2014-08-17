@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     app.setApplicationVersion("0.1");
 
     QGLFormat gl_format;
-    gl_format.setVersion(4, 1);
+    gl_format.setVersion(3, 3);
     gl_format.setProfile(QGLFormat::CoreProfile);
     //gl_format.setSampleBuffers(true);
 
