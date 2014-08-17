@@ -1,7 +1,7 @@
 Basic Model Viewer
 ==================
 
-Basic Model Viewer is a [Qt5] based visualization tool written in modernGL and
+Basic Model Viewer (BMV) is a [Qt5] based visualization tool written in ModernGL and
 currently support basic objects and .obj files.
 
 Version
@@ -17,7 +17,7 @@ Please check the demo at [BMV demo page].
 Prerequisites
 -------------
 
-Install [Qt5] with opengl support. Apart from this, no other dependency on third
+Install [Qt5] with opengl support. Make sure you have support for OpenGL 4.1. Apart from this, no other dependency on third
 party libraries.
 
 Installation
@@ -30,10 +30,17 @@ qmake ..
 make
 ```
 
+Tested environment(s)
+---------------------
+
+Currently tested on:
+
+    Mac OSX 10.9 [Graphics card: HD Graphics 4000, Radeon HD 5750]
+
 License
 -------
 
 Please check the accompanying license.txt file.
 
-[BMV demo page]:
+[BMV demo page]:http://homepages.cae.wisc.edu/~anumolu/Projects/Applications/BasicModelViewer/Demo.html
 [Qt5]:http://qt-project.org/qt5
