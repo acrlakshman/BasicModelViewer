@@ -48,11 +48,11 @@ Please check the accompanying license.txt file.
 Acknowledgements
 ----------------
 
-[Hammad Mazhar] both for his help in understanding the basics of computer graphics and providing his powerful camera class, whose basic functionalities are used in this project.
+[Hammad Mazhar] both for helping me to understand the basics of computer graphics and for providing his powerful camera class, the basic functionalities of which are used in this project.
 
-[Syoyo Fujita] for his obj file loader
+[Syoyo Fujita] for his obj file loader.
 
-[Pradeep Garigipati] for providing sample obj files
+[Pradeep Garigipati] for providing sample obj files.
 
 [Andrew Seidl]
 
