@@ -10,7 +10,7 @@ Rendering two objects using Basic Model Viewer.
 Version
 -------
 
-0.1
+0.9.0
 
 Basic Usage
 -----------
@@ -45,5 +45,20 @@ License
 
 Please check the accompanying license.txt file.
 
+Acknowledgements
+----------------
+
+[Hammad Mazhar] both for his help in understanding the basics of computer graphics and providing his powerful camera class, whose basic functionalities are used in this project.
+
+[Syoyo Fujita] for his obj file loader
+
+[Pradeep Garigipati] for providing sample obj files
+
+[Andrew Seidl]
+
 [BMV demo page]:http://homepages.cae.wisc.edu/~anumolu/Projects/Applications/BasicModelViewer/Demo.html
 [Qt5]:http://qt-project.org/qt5
+[Hammad Mazhar]:https://github.com/hmazhar
+[Syoyo Fujita]:https://github.com/syoyo
+[Pradeep Garigipati]:https://github.com/9prady9
+[Andrew Seidl]:https://github.com/andrewseidl

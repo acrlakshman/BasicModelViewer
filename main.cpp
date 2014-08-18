@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setApplicationName("Basic Model Viewer");
-    app.setApplicationVersion("0.1");
+    app.setApplicationVersion("0.9");
 
     QGLFormat gl_format;
     gl_format.setVersion(3, 3);
