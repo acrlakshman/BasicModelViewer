@@ -15,7 +15,7 @@ Version
 Basic Usage
 -----------
 
-Please check the demo at [BMV demo page].
+Please check the quick start guide at [BMV Introduction].
 
 Prerequisites
 -------------
@@ -48,7 +48,7 @@ Please check the accompanying license.txt file.
 Acknowledgements
 ----------------
 
-[Hammad Mazhar] both for helping me to understand the basics of computer graphics and for providing his powerful camera class, the basic functionalities of which are used in this project.
+[Hammad Mazhar] both for helping me to understand the basics of computer graphics and for making his camera class open source, the basic functionalities of which are used in this project.
 
 [Syoyo Fujita] for his obj file loader.
 
@@ -56,7 +56,7 @@ Acknowledgements
 
 [Andrew Seidl]
 
-[BMV demo page]:http://homepages.cae.wisc.edu/~anumolu/Projects/Applications/BasicModelViewer/Demo.html
+[BMV Introduction]:http://homepages.cae.wisc.edu/~anumolu/Projects/Applications/BasicModelViewer/QuickStart.html
 [Qt5]:http://qt-project.org/qt5
 [Hammad Mazhar]:https://github.com/hmazhar
 [Syoyo Fujita]:https://github.com/syoyo
