@@ -27,14 +27,14 @@ public:
 	Object();
 	~Object();
 
-	// Initialize the handles to -1, so that all handles start with
-	// bad values, which helps during the destructor call
+	/* Initialize the handles to -1, so that all handles start with
+	 bad values, which helps during the destructor call */
 	virtual bool Initialize();
 
-	// Generate vertex arrays, vertex buffers and bind data
+	/* Generate vertex arrays, vertex buffers and bind data */
 	virtual bool PostGLInitialize();
 
-	// Add light details
+	/* Add light details */
 	void AppendLight(Light light_details_);
 
 	inline void wire_frame_mode(bool swf) {

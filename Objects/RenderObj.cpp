@@ -89,6 +89,20 @@ void RenderObj::AddLight(Light light_)
 	   generic_object[i].AddLight(light_);
 }
 
+GLuint RenderObj::GetNumberOfLights()
+{
+    if (this->number_of_shapes > 0)
+        return generic_object[0].GetNumberOfLights();
+    else
+        return 0;
+}
+
+void RenderObj::EditLight(Light light_, GLuint idx_)
+{
+    for (GLuint i = 0; i < this->number_of_shapes; ++i)
+        generic_object[i].EditLight(light_, idx_);
+}
+
 void RenderObj::SetShininess(GLfloat shininess_)
 {
     for (GLuint i = 0; i < this->number_of_shapes; ++i)

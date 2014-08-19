@@ -42,6 +42,12 @@ public:
 	// Add light
 	void AddLight(Light light_);
 
+	// Return number of lights on this object
+	GLuint GetNumberOfLights();
+	
+	// Edit light info
+	void EditLight(Light light_, GLuint idx_ = 0);
+
 	// Set object shininess parameter
 	void SetShininess(GLfloat shininess_);
 
