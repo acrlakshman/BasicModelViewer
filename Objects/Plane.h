@@ -52,6 +52,14 @@ public:
 	// Add light
 	void AddLight(Light &light_);
 
+	/* Get number of lights */
+	GLuint GetNumberOfLights();
+	
+	/* Edit light details, given the light number. If light number
+	   is not provided, first light will be edited. In case no light
+	   exists, provided light will be added to the scene */
+	void EditLight(Light &light_details_, GLuint idx_ = 0);
+
 	// Set object shininess parameter
 	void SetShininess(GLfloat &shininess_);
 

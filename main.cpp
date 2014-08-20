@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
     QGLFormat gl_format;
     gl_format.setVersion(3, 3);
     gl_format.setProfile(QGLFormat::CoreProfile);
-    //gl_format.setSampleBuffers(true);
+    gl_format.setSampleBuffers(true);
+    gl_format.setSamples(4);
 
 #ifndef QT_NO_OPENGL
     ViewerWindow widget(gl_format);

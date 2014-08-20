@@ -462,6 +462,25 @@ void Plane::AddLight(Light &light_)
 	this->AppendLight(light_);
 }
 
+GLuint Plane::GetNumberOfLights()
+{
+	return this->num_lights;
+}
+
+void Plane::EditLight(Light &light_details_, GLuint idx_)
+{
+	if (!this->num_lights) {
+		this->AddLight(light_details_);
+	} else {
+		if (idx_ > this->num_lights-1)
+			this->AddLight(light_details_);
+		else if (idx_ < 0)
+			this->light_details.replace(0, light_details_);
+		else
+			this->light_details.replace(idx_, light_details_);
+	}
+}
+
 void Plane::SetShininess(GLfloat &shininess_)
 {
 	this->shininess = shininess_;

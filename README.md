@@ -43,7 +43,7 @@ Currently tested on:
 License
 -------
 
-Please check the accompanying license.txt file.
+BSD-Style license. Please check the accompanying [LICENSE].txt file.
 
 Acknowledgements
 ----------------
@@ -62,3 +62,4 @@ Acknowledgements
 [Syoyo Fujita]:https://github.com/syoyo
 [Pradeep Garigipati]:https://github.com/9prady9
 [Andrew Seidl]:https://github.com/andrewseidl
+[LICENSE]:https://github.com/acrlakshman/BasicModelViewer/blob/master/LICENSE.txt
