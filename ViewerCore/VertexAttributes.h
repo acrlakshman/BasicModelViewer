@@ -7,7 +7,7 @@
  * All rights reserved.
  *
  * This file is part of Basic Model Viewer whose distribution is governed by
- * the BSD-style license contained in the accompanying file license.txt.
+ * the FreeBSD License contained in the accompanying LICENSE.txt file.
  *
  * Description
  *  Class to store vertex attributes.
