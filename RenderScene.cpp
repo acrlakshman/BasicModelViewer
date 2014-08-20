@@ -36,8 +36,8 @@ bool RenderScene::InitializeScene()
     /* Edit default light info */
     Light light_for_teapot;
     light_for_teapot.position = QVector3D(0.0, 0.0, 10.0);
-    light_for_teapot.color_ambient = QVector3D(0.75, 0.0, 0.25);
-    light_for_teapot.color_diffuse = QVector3D(0.75, 0.0, 0.25);
+    light_for_teapot.color_ambient = QVector3D(0.75, 0.6, 0.5);
+    light_for_teapot.color_diffuse = QVector3D(0.75, 0.6, 0.5);
     light_for_teapot.color_specular = QVector3D(1.0, 1.0, 1.0);
 
     this->teapot_obj.EditLight(light_for_teapot);
