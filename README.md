@@ -43,7 +43,7 @@ Currently tested on:
 License
 -------
 
-BSD-Style license. Please check the accompanying [LICENSE].txt file.
+BSD 2-Clause License. Please check the accompanying [LICENSE].txt file.
 
 Acknowledgements
 ----------------

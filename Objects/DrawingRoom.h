@@ -3,7 +3,7 @@
  * All rights reserved.
  *
  * This file is part of Basic Model Viewer whose distribution is governed by
- * the FreeBSD License contained in the accompanying LICENSE.txt file.
+ * the BSD 2-Clause License contained in the accompanying LICENSE.txt file.
  *
  * Description
  *  Wrapper to create a default drawing environment, to visualize objects
