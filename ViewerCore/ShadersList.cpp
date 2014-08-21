@@ -22,8 +22,12 @@ bool ShadersList::InitializeDefaultShaders()
     if (!GetShaderFromSourceFile(&this->default_shader1, "../Shaders/solid_shader.vert", "../Shaders/solid_shader.frag"))
         return false;
 
+    if (!GetShaderFromSourceFile(&this->default_shader2, "../Shaders/gouraud_shader.vert", "../Shaders/gouraud_shader.frag"))
+        return false;
+
     this->default_shaders.push_back(&this->default_shader0);
     this->default_shaders.push_back(&this->default_shader1);
+    this->default_shaders.push_back(&this->default_shader2);
 
     default_shaders_count = default_shaders.size();
 

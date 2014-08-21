@@ -44,6 +44,7 @@ private:
     /* Different shader objects */
     QOpenGLShaderProgram default_shader0;
     QOpenGLShaderProgram default_shader1;
+    QOpenGLShaderProgram default_shader2;
 
     QOpenGLShaderProgram shader_; /* stores shader files provided by user */
 

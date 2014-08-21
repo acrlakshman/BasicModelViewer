@@ -2,6 +2,8 @@
     <qresource prefix="/">
         <file>phong_shader.vert</file>
         <file>phong_shader.frag</file>
+        <file>gouraud_shader.vert</file>
+        <file>gouraud_shader.frag</file>
         <file>solid_shader.vert</file>
         <file>solid_shader.frag</file>
     </qresource>

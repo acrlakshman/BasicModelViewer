@@ -9,7 +9,7 @@ uniform mat4 projection_matrix;
 uniform mat4 modelview_matrix;
 uniform mat4 mvp_matrix;
 uniform mat3 normal_matrix;
-uniform mat3 modelview_cam;
+uniform mat4 modelview_cam;
 
 flat out vec3 color;
 out vec3 normal;
