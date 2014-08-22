@@ -44,22 +44,6 @@ ViewerWindow::~ViewerWindow()
 
 void ViewerWindow::timerEvent(QTimerEvent *)
 {
-    // Decrease angular speed (friction)
-    angularSpeed *= 0.99;
-
-    // Update camera
-    this->camera.Update();
-
-    // Stop rotation when speed goes below threshold
-    if (angularSpeed < 0.01) {
-        angularSpeed = 0.0;
-    } else {
-        // Update rotation
-        rotation = QQuaternion::fromAxisAndAngle(rotationAxis, angularSpeed) * rotation;
-
-        // Update scene
-        updateGL();
-    }
 }
 
 void ViewerWindow::initializeGL()
