@@ -23,10 +23,10 @@
 /* Data structures */
 
 struct Light {
-	QVector3D position;
-	QVector3D color_ambient;
-	QVector3D color_diffuse;
-	QVector3D color_specular;
+	QVector3D position = QVector3D(0.0, 0.0, 10.0);
+	QVector3D color_ambient = QVector3D(0.5, 0.5, 0.5);
+	QVector3D color_diffuse = QVector3D(0.5, 0.5, 0.5);
+	QVector3D color_specular = QVector3D(1.0, 1.0, 1.0);
 };
 
 /* Functions */
@@ -80,7 +80,8 @@ static QVector3D Multiply_Mat3_Vec3(const QMatrix3x3 &Mat3, const QVector3D &Vec
 static void SaveCameraDetails(
 	QVector3D &camera_position_,
 	QVector3D &camera_lookat_,
-	QVector3D &camera_up_
+	QVector3D &camera_up_,
+	float &fov_
 	)
 {
 	FILE *file_p;
@@ -97,6 +98,26 @@ static void SaveCameraDetails(
 		fprintf(file_p, "Camera up vector: (%f, %f, %f)\n", camera_up_.x(),
 														camera_up_.y(),
 														camera_up_.z());
+		fprintf(file_p, "Camera field of view: %f\n", fov_);
+	} else {
+		qDebug() << "Error!";
+	}
+	fclose(file_p);
+}
+
+/* Save light details to a file */
+static void SaveLightDetails(
+	Light light_
+	)
+{
+	FILE *file_p;
+	file_p = fopen("../camera_details.txt", "a"); /* Assuming you are running
+														in build directory */
+	if (file_p != NULL){
+		fputs("\nLight details\n\n", file_p);
+		fprintf(file_p, "Light position: (%f, %f, %f)\n", light_.position.x(),
+														light_.position.y(),
+														light_.position.z());
 	} else {
 		qDebug() << "Error!";
 	}

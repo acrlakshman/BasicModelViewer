@@ -241,7 +241,9 @@ void ViewerWindow::keyPressEvent(QKeyEvent *e)
         break;
 
     case Qt::Key_C:
-        SaveCameraDetails(this->camera_position, this->camera_lookat, this->camera_up);
+        SaveCameraDetails(this->camera_position, this->camera_lookat, this->camera_up, this->fov);
+        Light light_;
+        SaveLightDetails(light_);
         break;
     }
 }
