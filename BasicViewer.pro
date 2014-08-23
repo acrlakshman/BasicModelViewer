@@ -22,10 +22,12 @@ qtHaveModule(opengl) {
         ViewerCore/Object.cpp \
         ViewerCore/GenericObject.cpp \
         ViewerCore/ParseObj.cpp \
+        ViewerCore/ParseEnSightPOV.cpp \
         Objects/Sphere.cpp \
         Objects/Plane.cpp \
         Objects/DrawingRoom.cpp \
         Objects/RenderObj.cpp \
+        Objects/RenderEnSightPOV.cpp \
         RenderScene.cpp
 
     HEADERS += \
@@ -40,10 +42,12 @@ qtHaveModule(opengl) {
         ViewerCore/Object.h \
         ViewerCore/GenericObject.h \
         ViewerCore/ParseObj.h \
+        ViewerCore/ParseEnSightPOV.h \
         Objects/Sphere.h \
         Objects/Plane.h \
         Objects/DrawingRoom.h \
         Objects/RenderObj.h \
+        Objects/RenderEnSightPOV.h \
         RenderScene.h
 
     RESOURCES += \

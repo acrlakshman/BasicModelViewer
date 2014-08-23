@@ -23,6 +23,7 @@
 #include <ViewerCore/ShadersList.h>
 #include <Objects/DrawingRoom.h>
 #include <Objects/RenderObj.h>
+#include <Objects/RenderEnSightPOV.h>
 
 class ShadersList;
 

@@ -63,17 +63,19 @@ bool RenderScene::Draw(
     if (!cubehandle_obj.Draw(projection, modelview_cam, modelview, shader_))
         return false;
 
+    QMatrix4x4 mv_tmp_ = modelview;
     modelview.translate(QVector3D(5.0, 5.0,-2.0));
     if (!teapot_obj.Draw(projection, modelview_cam, modelview, shader_))
         return false;
+    modelview = mv_tmp_;
 
     return true;
 }
 
 void RenderScene::TakeDown()
 {
-    shaders_list.TakeDown();
-    drawing_room.TakeDown();
-    cubehandle_obj.TakeDown();
-    teapot_obj.TakeDown();
+    this->shaders_list.TakeDown();
+    this->drawing_room.TakeDown();
+    this->cubehandle_obj.TakeDown();
+    this->teapot_obj.TakeDown();
 }
