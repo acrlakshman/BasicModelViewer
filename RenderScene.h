@@ -54,6 +54,9 @@ private:
     // Render obj file
     RenderObj cubehandle_obj;
     RenderObj teapot_obj;
+
+    /* Render EnSight generated POV */
+    RenderEnSightPOV test1_pov;
 };
 
 #endif // END OF __RENDERSCENE_H__
