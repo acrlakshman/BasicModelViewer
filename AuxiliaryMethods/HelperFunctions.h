@@ -85,7 +85,7 @@ static void SaveCameraDetails(
 	)
 {
 	FILE *file_p;
-	file_p = fopen("../camera_details.txt", "w+"); /* Assuming you are running
+	file_p = fopen("../scene_details.txt", "w"); /* Assuming you are running
 														in build directory */
 	if (file_p != NULL){
 		fputs("Camera details\n\n", file_p);
@@ -111,7 +111,7 @@ static void SaveLightDetails(
 	)
 {
 	FILE *file_p;
-	file_p = fopen("../camera_details.txt", "a"); /* Assuming you are running
+	file_p = fopen("../scene_details.txt", "a"); /* Assuming you are running
 														in build directory */
 	if (file_p != NULL){
 		fputs("\nLight details\n\n", file_p);
