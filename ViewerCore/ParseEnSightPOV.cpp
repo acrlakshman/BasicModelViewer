@@ -209,7 +209,7 @@ void ParseEnSightPOV::ExtractAllInts(const std::string &str_)
 
 	if (face_indices_local_.size() == 3)
 		for (int i = face_indices_local_.size()-1; i >= 0; --i)
-			this->vertex_indices.push_back(face_indices_local_[i]);
+			this->vertex_indices.push_back(face_indices_local_[i]-1);
 	else {
 		/*printf("str_ = %s\n", &str_[0]);
 		for (int i = face_indices_local_.size()-1; i >= 0; --i)
