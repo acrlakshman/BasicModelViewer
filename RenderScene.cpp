@@ -40,6 +40,19 @@ bool RenderScene::InitializeScene()
     this->cubehandle_obj.show_wire_frame(false);
     this->cubehandle_obj.show_normals(false);
 
+    if (!this->bunny_obj.LocalInitialize("../Resources/bunny.obj"))
+        return false;
+    this->bunny_obj.show_wire_frame(false);
+    this->bunny_obj.show_normals(false);
+
+    Light light_for_bunny;
+    light_for_bunny.position = QVector3D(0.0, 0.5, 0.0);
+    light_for_bunny.color_ambient = QVector3D(0.1, 0.6, 0.6);
+    light_for_bunny.color_diffuse = QVector3D(0.1, 0.6, 0.6);
+    light_for_bunny.color_specular = QVector3D(1.0, 1.0, 1.0);
+
+    this->bunny_obj.EditLight(light_for_bunny);
+
     if (!this->teapot_obj.LocalInitialize("../Resources/teapot.obj"))
         return false;
     /*if (!this->teapot_obj.LocalInitialize("../personal_resources/3.obj"))
@@ -77,16 +90,21 @@ bool RenderScene::Draw(
         return false;
 
     /*if (!cubehandle_obj.Draw(projection, modelview_cam, modelview, shader_))
+        return false;*/
+
+    if (!this->bunny_obj.Draw(projection, modelview_cam, modelview, shader_))
         return false;
 
     QMatrix4x4 mv_tmp_ = modelview;
-    modelview.translate(QVector3D(5.0, 5.0,-2.0));
-    if (!teapot_obj.Draw(projection, modelview_cam, modelview, shader_))
+    //modelview.translate(QVector3D(5.0, 5.0,-2.0));
+    /*if (!teapot_obj.Draw(projection, modelview_cam, modelview, shader_))
+        return false;*/
+    modelview = mv_tmp_;
+
+    /*modelview.translate(QVector3D(0.0, 0.0, -15.0));
+    if (!this->test1_pov.Draw(projection, modelview_cam, modelview, shader_))
         return false;
     modelview = mv_tmp_;*/
-
-    if (!this->obj_models.Draw(projection, modelview_cam, modelview, shader_))
-        return false;
 
     return true;
 }
@@ -95,7 +113,8 @@ void RenderScene::TakeDown()
 {
     this->shaders_list.TakeDown();
     this->drawing_room.TakeDown();
-    this->obj_models.TakeDown();
-    //this->cubehandle_obj.TakeDown();
-    //this->teapot_obj.TakeDown();
+    this->cubehandle_obj.TakeDown();
+    this->bunny_obj.TakeDown();
+    this->teapot_obj.TakeDown();
+    //this->test1_pov.TakeDown();
 }

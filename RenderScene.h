@@ -65,6 +65,7 @@ private:
     // Render obj file
     RenderObj cubehandle_obj;
     RenderObj teapot_obj;
+    RenderObj bunny_obj;
 
     /* Render objs */
     RenderObjs obj_models;

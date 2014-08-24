@@ -22,6 +22,8 @@
 #ifndef __VIEWERWINDOW_H__
 #define __VIEWERWINDOW_H__
 
+#include <time.h>
+
 #include <QGLWidget>
 #include <QDialog>
 #include <QVector>
@@ -52,6 +54,9 @@ public:
     int xRotation() const { return xRot; }
     int yRotation() const { return yRot; }
     int zRotation() const { return zRot; }
+
+    clock_t time_;
+    GLfloat angle_;
 
 public slots:
     void setXRotation(int angle);
