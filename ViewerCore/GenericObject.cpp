@@ -356,7 +356,7 @@ void GenericObject::BuildNormalVisualizationGeometry()
 {
 	this->normal_vertices.clear();
 	this->normal_indices.clear();
-	const float normal_scalar = 0.1f;
+	const float normal_scalar = 0.99f;
 	for (GLuint j = 0; j < (GLuint)this->vertices.size(); ++j)
 	{
 		this->normal_vertices.push_back(VertexAttributesP(this->vertices[j].position));

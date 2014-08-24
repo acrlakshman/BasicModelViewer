@@ -207,10 +207,11 @@ void ParseEnSightPOV::ExtractAllInts(const std::string &str_)
 		start_pos = -1;
 	}
 
-	if (face_indices_local_.size() == 3)
-		for (int i = face_indices_local_.size()-1; i >= 0; --i)
-			this->vertex_indices.push_back(face_indices_local_[i]-1);
-	else {
+	if (face_indices_local_.size() == 3) {
+		this->vertex_indices.push_back(face_indices_local_[2]-1);
+		this->vertex_indices.push_back(face_indices_local_[1]-1);
+		this->vertex_indices.push_back(face_indices_local_[0]-1);
+	} else {
 		/*printf("str_ = %s\n", &str_[0]);
 		for (int i = face_indices_local_.size()-1; i >= 0; --i)
 			qDebug() << "face_indices_local_[" << i << "]: " << face_indices_local_[i];

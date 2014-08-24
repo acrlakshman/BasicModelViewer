@@ -44,6 +44,8 @@ bool RenderScene::InitializeScene()
 
     /* Initialize EnSightPOV file */
     this->test1_pov.LocalInitialize("../Resources/plane.pov");
+    this->test1_pov.show_wire_frame(true);
+    this->test1_pov.show_normals(true);
 
     return true;
 }
