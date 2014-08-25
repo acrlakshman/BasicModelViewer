@@ -42,11 +42,6 @@ bool RenderScene::InitializeScene()
 
     this->teapot_obj.EditLight(light_for_teapot);
 
-    /* Initialize EnSightPOV file */
-    this->test1_pov.LocalInitialize("../Resources/plane.pov");
-    this->test1_pov.show_wire_frame(true);
-    this->test1_pov.show_normals(true);
-
     return true;
 }
 
@@ -74,11 +69,6 @@ bool RenderScene::Draw(
         return false;
     modelview = mv_tmp_;
 
-    modelview.translate(QVector3D(0.0, 0.0, -15.0));
-    if (!this->test1_pov.Draw(projection, modelview_cam, modelview, shader_))
-        return false;
-    modelview = mv_tmp_;
-
     return true;
 }
 
@@ -88,5 +78,4 @@ void RenderScene::TakeDown()
     this->drawing_room.TakeDown();
     this->cubehandle_obj.TakeDown();
     this->teapot_obj.TakeDown();
-    this->test1_pov.TakeDown();
 }
