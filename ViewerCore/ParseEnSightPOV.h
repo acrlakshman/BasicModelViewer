@@ -9,6 +9,8 @@
  *	This class parses POV file genereated by EnSight to the format used in this
  *	package.
  *	CAUTION: File is buffered to memory completely before performing operations
+ *	ISSUE: Parser gave wrong results when applied on preliminary .pov files
+ *	hence need some modifications.
  */
 
 #ifndef __PARSEENSIGHTPOV_H__
