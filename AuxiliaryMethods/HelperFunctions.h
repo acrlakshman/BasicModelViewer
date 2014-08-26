@@ -85,19 +85,29 @@ static void SaveCameraDetails(
 	)
 {
 	FILE *file_p;
-	file_p = fopen("../scene_details.txt", "w"); /* Assuming you are running
-														in build directory */
+	file_p = fopen("../scene_details.txt", "w");
 	if (file_p != NULL){
-		fputs("Camera details\n\n", file_p);
+		fputs("Camera details (Right handed system)\n", file_p);
 		fprintf(file_p, "Camera position: (%f, %f, %f)\n", camera_position_.x(),
-														camera_position_.y(),
-														camera_position_.z());
+								camera_position_.y(),
+								camera_position_.z());
 		fprintf(file_p, "Camera look at: (%f, %f, %f)\n", camera_lookat_.x(),
-														camera_lookat_.y(),
-														camera_lookat_.z());
+								camera_lookat_.y(),
+								camera_lookat_.z());
 		fprintf(file_p, "Camera up vector: (%f, %f, %f)\n", camera_up_.x(),
-														camera_up_.y(),
-														camera_up_.z());
+								camera_up_.y(),
+								camera_up_.z());
+		fprintf(file_p, "Camera field of view: %f\n", fov_);
+		fputs("\nCamera details (Left handed system)\n", file_p);
+		fprintf(file_p, "Camera position: (%f, %f, %f)\n", camera_position_.x(),
+								camera_position_.y(),
+								-camera_position_.z());
+		fprintf(file_p, "Camera look at: (%f, %f, %f)\n", camera_lookat_.x(),
+								camera_lookat_.y(),
+								-camera_lookat_.z());
+		fprintf(file_p, "Camera up vector: (%f, %f, %f)\n", camera_up_.x(),
+								camera_up_.y(),
+								-camera_up_.z());
 		fprintf(file_p, "Camera field of view: %f\n", fov_);
 	} else {
 		qDebug() << "Error!";
@@ -111,13 +121,16 @@ static void SaveLightDetails(
 	)
 {
 	FILE *file_p;
-	file_p = fopen("../scene_details.txt", "a"); /* Assuming you are running
-														in build directory */
+	file_p = fopen("../scene_details.txt", "a");
 	if (file_p != NULL){
-		fputs("\nLight details\n\n", file_p);
+		fputs("\nLight details (Right handed system)\n", file_p);
 		fprintf(file_p, "Light position: (%f, %f, %f)\n", light_.position.x(),
-														light_.position.y(),
-														light_.position.z());
+								light_.position.y(),
+								light_.position.z());
+		fputs("\nLight details (Left handed system)\n", file_p);
+		fprintf(file_p, "Light position: (%f, %f, %f)\n", light_.position.x(),
+								light_.position.y(),
+								-light_.position.z());
 	} else {
 		qDebug() << "Error!";
 	}
