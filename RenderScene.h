@@ -23,6 +23,7 @@
 #include <ViewerCore/ShadersList.h>
 #include <Objects/DrawingRoom.h>
 #include <Objects/RenderObj.h>
+#include <Objects/RenderObjs.h>
 #include <Objects/RenderEnSightPOV.h>
 
 class ShadersList;
@@ -54,6 +55,9 @@ private:
     // Render obj file
     RenderObj cubehandle_obj;
     RenderObj teapot_obj;
+
+    /* Render objs */
+    RenderObjs obj_models;
 
     /* Render EnSight generated POV */
     //RenderEnSightPOV test1_pov;

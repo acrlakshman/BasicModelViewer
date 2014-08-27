@@ -107,9 +107,23 @@ bool GenericObject::InitializeVertexPositionsAndIndices(
 	this->num_vertices = vertex_positions_.size();
 	this->vertices.resize(this->num_vertices);
 
+	float x_min, x_max, y_min, y_max, z_min, z_max;
+	x_min = x_max = y_min = y_max = z_min = z_max = 0.0;
+
 	for (GLuint i = 0; i < this->num_vertices; ++i) {
 		this->vertices[i].position = vertex_positions_[i];
+
+		x_min = std::min(x_min, this->vertices[i].position.x());
+		x_max = std::max(x_max, this->vertices[i].position.x());
+		y_min = std::min(y_min, this->vertices[i].position.y());
+		y_max = std::max(y_max, this->vertices[i].position.y());
+		z_min = std::min(z_min, this->vertices[i].position.z());
+		z_max = std::max(z_max, this->vertices[i].position.z());
 	}
+	b_box_.x_range = QVector2D(x_min, x_max);
+	b_box_.y_range = QVector2D(y_min, y_max);
+	b_box_.z_range = QVector2D(z_min, z_max);
+	this->SetBoundingBox(&this->b_box_);
 
 	this->num_vertex_indices = vertex_indices_.size();
 	this->vertex_indices.resize(this->num_vertex_indices);

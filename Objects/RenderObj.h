@@ -54,6 +54,9 @@ public:
 	void show_wire_frame(bool swf_);
 	void show_normals(bool sn_);
 
+	/* Return bounding boxes for all shapes */
+	QVector<bounding_box> GetBoundingBoxes();
+
 	// Delete all created vectors, associated shaders
 	void TakeDown();
 

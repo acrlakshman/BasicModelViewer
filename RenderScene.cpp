@@ -32,6 +32,9 @@ bool RenderScene::InitializeScene()
 
     if (!this->teapot_obj.LocalInitialize("../Resources/teapot.obj"))
         return false;
+    /*if (!this->teapot_obj.LocalInitialize("../personal_resources/3.obj"))
+        return false;*/
+    this->teapot_obj.show_wire_frame(true);
 
     /* Edit default light info */
     Light light_for_teapot;
@@ -41,6 +44,9 @@ bool RenderScene::InitializeScene()
     light_for_teapot.color_specular = QVector3D(1.0, 1.0, 1.0);
 
     this->teapot_obj.EditLight(light_for_teapot);
+
+    //obj_models.AddObj(&cubehandle_obj);
+    obj_models.AddObj(&teapot_obj);
 
     return true;
 }
@@ -60,14 +66,17 @@ bool RenderScene::Draw(
     if (!drawing_room.Draw(projection, modelview_cam, modelview, shader_))
         return false;
 
-    if (!cubehandle_obj.Draw(projection, modelview_cam, modelview, shader_))
+    /*if (!cubehandle_obj.Draw(projection, modelview_cam, modelview, shader_))
         return false;
 
     QMatrix4x4 mv_tmp_ = modelview;
     modelview.translate(QVector3D(5.0, 5.0,-2.0));
     if (!teapot_obj.Draw(projection, modelview_cam, modelview, shader_))
         return false;
-    modelview = mv_tmp_;
+    modelview = mv_tmp_;*/
+
+    if (!this->obj_models.Draw(projection, modelview_cam, modelview, shader_))
+        return false;
 
     return true;
 }
@@ -76,6 +85,7 @@ void RenderScene::TakeDown()
 {
     this->shaders_list.TakeDown();
     this->drawing_room.TakeDown();
-    this->cubehandle_obj.TakeDown();
-    this->teapot_obj.TakeDown();
+    this->obj_models.TakeDown();
+    //this->cubehandle_obj.TakeDown();
+    //this->teapot_obj.TakeDown();
 }

@@ -20,6 +20,7 @@ qtHaveModule(opengl) {
         ViewerCore/VertexAttributes.cpp \
         ViewerCore/PlanarMesh.cpp \
         ViewerCore/Object.cpp \
+        ViewerCore/BoundingBox.cpp \
         ViewerCore/GenericObject.cpp \
         ViewerCore/ParseObj.cpp \
         ViewerCore/ParseEnSightPOV.cpp \
@@ -27,6 +28,7 @@ qtHaveModule(opengl) {
         Objects/Plane.cpp \
         Objects/DrawingRoom.cpp \
         Objects/RenderObj.cpp \
+        Objects/RenderObjs.cpp \
         Objects/RenderEnSightPOV.cpp \
         RenderScene.cpp
 
@@ -40,6 +42,7 @@ qtHaveModule(opengl) {
         ViewerCore/VertexAttributes.h \
         ViewerCore/PlanarMesh.h \
         ViewerCore/Object.h \
+        ViewerCore/BoundingBox.h \
         ViewerCore/GenericObject.h \
         ViewerCore/ParseObj.h \
         ViewerCore/ParseEnSightPOV.h \
@@ -47,6 +50,7 @@ qtHaveModule(opengl) {
         Objects/Plane.h \
         Objects/DrawingRoom.h \
         Objects/RenderObj.h \
+        Objects/RenderObjs.h \
         Objects/RenderEnSightPOV.h \
         RenderScene.h
 

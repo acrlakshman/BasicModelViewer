@@ -21,13 +21,14 @@
 #include <QOpenGLFunctions>
 #include <QOpenGLShaderProgram>
 
-#include <ViewerCore/Object.h>
 #include <AuxiliaryMethods/CheckErrors.h>
 #include <AuxiliaryMethods/HelperFunctions.h>
 
+#include <ViewerCore/Object.h>
+#include <ViewerCore/BoundingBox.h>
 #include <ViewerCore/ShadersList.h>
 
-class GenericObject : protected Object
+class GenericObject : protected Object, public BoundingBox
 {
 public:
 	GenericObject();
@@ -102,6 +103,9 @@ private:
 	bool include_specular_;
 
 	QVector3D vertex_global_color;
+
+	/* bounding box */
+	bounding_box b_box_;
 
 	// Compute and store triangle normals
 	void ComputeTriangleNormals();

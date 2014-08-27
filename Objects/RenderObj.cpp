@@ -76,11 +76,11 @@ bool RenderObj::Draw(
 	)
 {
 
-    for (GLuint i = 0; i < this->number_of_shapes; ++i) {
-        generic_object[i].Draw(projection, modelview_cam, modelview, shader_);
-    }
+    for (GLuint i = 0; i < this->number_of_shapes; ++i)
+        if (!this->generic_object[i].Draw(projection, modelview_cam, modelview, shader_))
+            return false;
 
-    return !GLReturnedError("RenderObj::Draw - on exit");
+    return true;
 }
 
 void RenderObj::AddLight(Light light_)
@@ -119,6 +119,15 @@ void RenderObj::show_normals(bool sn_)
 {
     for (GLuint i = 0; i < this->number_of_shapes; ++i)
 	   generic_object[i].show_normals(sn_);
+}
+
+QVector<bounding_box> RenderObj::GetBoundingBoxes()
+{
+    QVector<bounding_box> b_boxes;
+    for (GLuint i = 0; i < this->number_of_shapes; ++i) {
+        b_boxes.push_back(generic_object[i].GetBoundingBox());
+    }
+    return b_boxes;
 }
 
 void RenderObj::TakeDown()

@@ -15,10 +15,12 @@
 
 #include <stdio.h>
 
-#include <QGenericMatrix>
-#include <QMatrix4x4>
+#include <QVector>
+#include <QVector2D>
 #include <QVector3D>
 #include <QVector4D>
+#include <QMatrix4x4>
+#include <QGenericMatrix>
 
 /* Data structures */
 
@@ -27,6 +29,12 @@ struct Light {
 	QVector3D color_ambient = QVector3D(0.5, 0.5, 0.5);
 	QVector3D color_diffuse = QVector3D(0.5, 0.5, 0.5);
 	QVector3D color_specular = QVector3D(1.0, 1.0, 1.0);
+};
+
+struct bounding_box {
+	QVector2D x_range = QVector2D(0.0, 0.0);
+	QVector2D y_range = QVector2D(0.0, 0.0);
+	QVector2D z_range = QVector2D(0.0, 0.0);
 };
 
 /* Functions */
@@ -74,6 +82,38 @@ static QVector3D Multiply_Mat3_Vec3(const QMatrix3x3 &Mat3, const QVector3D &Vec
 	Vec4_tmp = Mat4_tmp * Vec4_tmp;
 
 	return QVector3D(Vec4_tmp);
+}
+
+/* Union of two bounding boxes */
+static bounding_box BoundingBoxesUnion2(const bounding_box &b_box1, const bounding_box &b_box2)
+{
+	bounding_box u_b_box;
+	u_b_box.x_range.setX(std::min(b_box1.x_range.x(), b_box2.x_range.x()));
+	u_b_box.x_range.setY(std::max(b_box1.x_range.y(), b_box2.x_range.y()));
+	u_b_box.y_range.setX(std::min(b_box1.y_range.x(), b_box2.y_range.x()));
+	u_b_box.y_range.setY(std::max(b_box1.y_range.y(), b_box2.y_range.y()));
+	u_b_box.z_range.setX(std::min(b_box1.z_range.x(), b_box2.z_range.x()));
+	u_b_box.z_range.setY(std::max(b_box1.z_range.y(), b_box2.z_range.y()));
+
+	return u_b_box;
+}
+
+/* Union of a vector of bounding boxes */
+static bounding_box BoundingBoxesUnion(const QVector<bounding_box> &b_boxes)
+{
+	bounding_box u_b_box;
+	for (int i = 0; i < b_boxes.size(); ++i) {
+		u_b_box = BoundingBoxesUnion2(u_b_box, b_boxes[i]);
+	}
+	return u_b_box;
+}
+
+/* Print bounding box */
+static void PrintBoundingBox(const bounding_box &b_box)
+{
+	qDebug() << "x_range = [" << b_box.x_range.x() << "," << b_box.x_range.y() << "]";
+	qDebug() << "y_range = [" << b_box.y_range.x() << "," << b_box.y_range.y() << "]";
+	qDebug() << "z_range = [" << b_box.z_range.x() << "," << b_box.z_range.y() << "]";
 }
 
 /* Save camera details to a file */
