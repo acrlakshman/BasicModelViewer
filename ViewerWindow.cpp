@@ -20,9 +20,9 @@ ViewerWindow::ViewerWindow(const QGLFormat &format, QWidget *parent) :
     angularSpeed(0)
 {
     cam_type = ONSPHERE;
-    cam_position_initial = QVector3D(36.402737, 41.488392, 30.879433); //QVector3D(20.0, 0.0, 60.0);
+    cam_position_initial = QVector3D(0,0,10); //QVector3D(20.0, 0.0, 60.0);
     cam_lookat_initial = QVector3D(0.0, 0.0, 0.0);
-    cam_up_initial = QVector3D(-0.493296, 0.754725, -0.432489); //QVector3D(0.0, 1.0, 0.0);
+    cam_up_initial = QVector3D(0,1,0); //QVector3D(0.0, 1.0, 0.0);
     this->camera_position = this->cam_position_initial;
     this->camera_lookat = this->cam_lookat_initial;
     this->camera_up = this->cam_up_initial;

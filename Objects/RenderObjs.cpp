@@ -45,7 +45,8 @@ void RenderObjs::AddObj(RenderObj *render_obj_)
 
     this->ComputeGlobalBoundingBox();
     this->x_base_move = (this->global_b_box.x_range.x() + this->global_b_box.x_range.y()) /  2.0;
-    this->y_base_move = (this->global_b_box.y_range.x() + this->global_b_box.y_range.y()) /  2.0;
+    this->y_base_move = this->global_b_box.y_range.x();
+    //this->y_base_move = (this->global_b_box.y_range.x() + this->global_b_box.y_range.y()) /  2.0;
     this->z_base_move = (this->global_b_box.z_range.x() + this->global_b_box.z_range.y()) /  2.0;
 }
 
