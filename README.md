@@ -56,7 +56,7 @@ Acknowledgements
 
 [Andrew Seidl]
 
-[BMV Introduction]:http://homepages.cae.wisc.edu/~anumolu/Projects/Applications/BasicModelViewer/QuickStart.html
+[BMV Introduction]:http://acrlakshman.github.io/personal_website/Projects/Applications/BasicModelViewer/
 [Qt5]:http://qt-project.org/qt5
 [Hammad Mazhar]:https://github.com/hmazhar
 [Syoyo Fujita]:https://github.com/syoyo
