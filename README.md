@@ -36,9 +36,14 @@ make
 Tested environment(s)
 ---------------------
 
-Currently tested on:
+Currently developing on:
+
+	Mac OS X 10.10 [Graphics card: HD Graphics 4000]
+
+Tested on:
 
     Mac OS X 10.9 [Graphics card: HD Graphics 4000, Radeon HD 5750]
+    Mac OS X 10.10 [Graphics card: HD Graphics 4000]
 
 License
 -------
