@@ -1,9 +1,19 @@
 /*
- * Copyright (c) 2014, Lakshman Anumolu
- * All rights reserved.
+ * This file is part of Basic Model Viewer (visualization package)
  *
- * This file is part of Basic Model Viewer whose distribution is governed by
- * the BSD 2-Clause License contained in the accompanying LICENSE.txt file.
+ * Copyright (c) 2015, Lakshman Anumolu
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License version 2.1 as published by the Free Software Foundation.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "Object.h"
@@ -31,7 +41,7 @@ bool Object::Initialize()
 
 bool Object::PostGLInitialize()
 {
-	
+
 	glGenVertexArrays(1, &this->vertex_array_handle);
 	glBindVertexArray(this->vertex_array_handle);
 
@@ -77,13 +87,13 @@ void Object::TakeDown()
 {
 	if (this->vertex_array_handle != GLuint(-1))
 		glDeleteVertexArrays(1, &this->vertex_array_handle);
-	
+
 	if (this->vertex_data_handle != GLuint(-1))
 		glDeleteBuffers(1, &this->vertex_data_handle);
-	
+
 	if (this->vertex_indices_handle != GLuint(-1))
 		glDeleteBuffers(1, &this->vertex_indices_handle);
-	
+
 	if (this->vertex_indices_wire_frame_handle != GLuint(-1))
 		glDeleteBuffers(1, &this->vertex_indices_wire_frame_handle);
 
@@ -108,7 +118,7 @@ void Object::TakeDown()
 	normal_indices.clear();
 
 	light_details.clear();
-	
+
 	this->InternalInitialize();
 }
 
@@ -121,5 +131,5 @@ void Object::InternalInitialize()
 
 	/* TODO: Enable normals too */
 	this->normal_array_handle = this->normal_data_handle = this->normal_indices_handle = GLuint(-1);
-	
+
 }

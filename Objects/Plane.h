@@ -1,9 +1,19 @@
 /*
- * Copyright (c) 2014, Lakshman Anumolu
- * All rights reserved.
+ * This file is part of Basic Model Viewer (visualization package)
  *
- * This file is part of Basic Model Viewer whose distribution is governed by
- * the BSD 2-Clause License contained in the accompanying LICENSE.txt file.
+ * Copyright (c) 2015, Lakshman Anumolu
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License version 2.1 as published by the Free Software Foundation.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  *
  * Description
  *  Class to create a 2D plane with normal pointing along positive Z-direction.
@@ -54,7 +64,7 @@ public:
 
 	/* Get number of lights */
 	GLuint GetNumberOfLights();
-	
+
 	/* Edit light details, given the light number. If light number
 	   is not provided, first light will be edited. In case no light
 	   exists, provided light will be added to the scene */
@@ -80,7 +90,7 @@ private:
 	QVector3D vertex_global_color;
 
 	bool show_normals_;
-	
+
 	bool include_ambience_;
 	bool include_diffuse_;
 	bool include_specular_;

@@ -38,17 +38,18 @@ Tested environment(s)
 
 Currently developing on:
 
-	Mac OS X 10.10 [Graphics card: HD Graphics 4000]
+    Mac OS X 10.11 [Graphics card: HD Graphics 4000]
 
 Tested on:
 
     Mac OS X 10.9 [Graphics card: HD Graphics 4000, Radeon HD 5750]
     Mac OS X 10.10 [Graphics card: HD Graphics 4000]
+    Mac OS X 10.11 [Graphics card: HD Graphics 4000]
 
 License
 -------
 
-BSD 2-Clause License. Please check the accompanying [LICENSE].txt file.
+This software is distributed under the [LGPLv2.1] license. Please read [LICENSE] for information on the software availability and distribution.
 
 Acknowledgements
 ----------------
@@ -68,3 +69,4 @@ Acknowledgements
 [Pradeep Garigipati]:https://github.com/9prady9
 [Andrew Seidl]:https://github.com/andrewseidl
 [LICENSE]:https://github.com/acrlakshman/BasicModelViewer/blob/master/LICENSE.txt
+[LGPLv2.1]:http://www.gnu.org/licenses/lgpl-2.1.html

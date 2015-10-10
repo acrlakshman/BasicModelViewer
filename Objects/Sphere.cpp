@@ -1,9 +1,19 @@
 /*
- * Copyright (c) 2014, Lakshman Anumolu
- * All rights reserved.
+ * This file is part of Basic Model Viewer (visualization package)
  *
- * This file is part of Basic Model Viewer whose distribution is governed by
- * the BSD 2-Clause License contained in the accompanying LICENSE.txt file.
+ * Copyright (c) 2015, Lakshman Anumolu
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License version 2.1 as published by the Free Software Foundation.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "Sphere.h"
@@ -61,7 +71,7 @@ bool Sphere::LocalInitialize(GLuint slices_, GLuint stacks_)
 			vertices[++k].position = QVector3D( x_p, y_p, z_p );
 			//qDebug() << "vertices[" << k << "].position = " << vertices[k].position;
 			QVector3D color_ = QVector3D(0.0f, 1.0f, 0.0f);
-			
+
 			vertices[k].color = color_;
 
 			vertices[k].texture_coordinate = QVector2D( float(i) / (W - 1), 1.-float(j) / (H-1) );
