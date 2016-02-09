@@ -61,6 +61,9 @@ public:
 	// Set object shininess parameter
 	void SetShininess(GLfloat shininess_);
 
+        // Set position offset
+        void SetVertexPositionsGlobalOffset(const QVector3D position_offset);
+
 	void show_wire_frame(bool swf_);
 	void show_normals(bool sn_);
 
@@ -75,6 +78,7 @@ private:
 
 	QVector3D default_vertex_color;
 	Light default_light;
+        QVector3D positions_global_offset;
 
 	ParseObj parse_obj;
 	GenericObject *generic_object;

@@ -26,6 +26,7 @@ RenderObj::RenderObj()
 	default_light.color_ambient = QVector3D(0.3, 0.3, 0.3);
 	default_light.color_diffuse = QVector3D(0.3, 0.3, 0.3);
 	default_light.color_specular = QVector3D(1.0, 1.0, 1.0);
+        positions_global_offset = QVector3D(0.0, 0.0, 0.0);
 }
 
 RenderObj::~RenderObj()
@@ -50,6 +51,7 @@ bool RenderObj::LocalInitialize(QString obj_file_name)
     generic_object = new GenericObject[this->number_of_shapes];
 
     for (GLuint i = 0; i < this->number_of_shapes; ++i) {
+      generic_object[i].SetVertexPositionsGlobalOffset(positions_global_offset);
         generic_object[i].InitializeVertexPositionsAndIndices(parse_obj.vertex_positions[i],
                                                         parse_obj.vertex_indices[i]);
 
@@ -117,6 +119,11 @@ void RenderObj::SetShininess(GLfloat shininess_)
 {
     for (GLuint i = 0; i < this->number_of_shapes; ++i)
 	   generic_object[i].SetShininess(shininess_);
+}
+
+void RenderObj::SetVertexPositionsGlobalOffset(const QVector3D position_offset)
+{
+  this->positions_global_offset = position_offset;
 }
 
 void RenderObj::show_wire_frame(bool swf_)

@@ -27,6 +27,9 @@
  * TODO: Complete GUI implementation, to avoid user modifying this code for every task.
  */
 
+#include <cstdlib>
+#include <ctime>
+
 #include <QOpenGLShaderProgram>
 
 #include <AuxiliaryMethods/HelperFunctions.h>
@@ -66,6 +69,7 @@ private:
     RenderObj cubehandle_obj;
     RenderObj teapot_obj;
     RenderObj bunny_obj;
+    std::vector<RenderObj> teapot_objs;
 
     /* Render objs */
     RenderObjs obj_models;

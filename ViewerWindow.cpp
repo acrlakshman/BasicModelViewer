@@ -30,7 +30,7 @@ ViewerWindow::ViewerWindow(const QGLFormat &format, QWidget *parent) :
     angularSpeed(0)
 {
     cam_type = ONSPHERE;
-    cam_position_initial = QVector3D(1.599270, 1.355425, 1.289346); //QVector3D(36.402737, 41.488392, 30.879433); //QVector3D(20.0, 0.0, 60.0);
+    cam_position_initial = QVector3D(70.599270, 70.355425, 70.289346); //QVector3D(36.402737, 41.488392, 30.879433); //QVector3D(20.0, 0.0, 60.0);
     cam_lookat_initial = QVector3D(0.0, 0.0, 0.0);
     cam_up_initial = QVector3D(-0.524259, 0.731961, -0.435155); //QVector3D(-0.493296, 0.754725, -0.432489); //QVector3D(0.0, 1.0, 0.0);
     this->camera_position = this->cam_position_initial;
@@ -130,7 +130,7 @@ void ViewerWindow::paintGL()
 
     QMatrix4x4 modelview = modelview_cam;
 
-    modelview.rotate(this->angle_, QVector3D(0.0, 1.0, 0.0));
+    //modelview.rotate(this->angle_, QVector3D(0.0, 1.0, 0.0));
     if (!this->render_scene.Draw(projection, modelview_cam, modelview, shaders_list.default_shaders[0]))
         close();
 

@@ -31,7 +31,8 @@ GenericObject::GenericObject()
 	include_diffuse_(true),
 	include_specular_(true),
 	is_shader_for_normals_initialized(false),
-	vertex_global_color(QVector3D(0.0, 0.9, 0.0))
+	vertex_global_color(QVector3D(0.0, 0.9, 0.0)),
+        vertex_positions_global_offset(QVector3D(0.0, 0.0, 0.0))
 {
 	this->wire_frame_mode(false);
 }
@@ -121,7 +122,8 @@ bool GenericObject::InitializeVertexPositionsAndIndices(
 	x_min = x_max = y_min = y_max = z_min = z_max = 0.0;
 
 	for (GLuint i = 0; i < this->num_vertices; ++i) {
-		this->vertices[i].position = vertex_positions_[i];
+		this->vertices[i].position = vertex_positions_[i] +
+                                            vertex_positions_global_offset;
 
 		x_min = std::min(x_min, this->vertices[i].position.x());
 		x_max = std::max(x_max, this->vertices[i].position.x());
@@ -424,6 +426,12 @@ void GenericObject::EditLight(Light &light_details_, GLuint idx_)
 void GenericObject::SetShininess(GLfloat &shininess_)
 {
 	this->shininess = shininess_;
+}
+
+void GenericObject::SetVertexPositionsGlobalOffset(const QVector3D
+                                                   position_offset)
+{
+  this->vertex_positions_global_offset = position_offset;
 }
 
 void GenericObject::show_wire_frame(bool swf_)

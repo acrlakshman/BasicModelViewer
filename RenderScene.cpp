@@ -69,7 +69,20 @@ bool RenderScene::InitializeScene()
     this->teapot_obj.EditLight(light_for_teapot);
 
     //obj_models.AddObj(&cubehandle_obj);
-    obj_models.AddObj(&teapot_obj);
+    //obj_models.AddObj(&teapot_obj);
+
+    // Initialize 50 teapots
+    srand(time(NULL));
+    teapot_objs.resize(500);
+    for (int i = 0; i < teapot_objs.size(); ++i) {
+      QVector3D obj_positions_offset = QVector3D(rand() % 100 - 50,
+                                                 rand() % 100 - 50,
+                                                 rand() % 100 - 50);
+      teapot_objs[i].SetVertexPositionsGlobalOffset(obj_positions_offset);
+      if (!teapot_objs[i].LocalInitialize("../Resources/teapot.obj"))
+        return false;
+      obj_models.AddObj(&teapot_objs[i]);
+    }
 
     return true;
 }
@@ -92,8 +105,11 @@ bool RenderScene::Draw(
     /*if (!cubehandle_obj.Draw(projection, modelview_cam, modelview, shader_))
         return false;*/
 
-    if (!this->bunny_obj.Draw(projection, modelview_cam, modelview, shader_))
-        return false;
+    /*if (!this->bunny_obj.Draw(projection, modelview_cam, modelview, shader_))
+        return false;*/
+
+    if (!this->obj_models.Draw(projection, modelview_cam, modelview, shader_))
+      return false;
 
     QMatrix4x4 mv_tmp_ = modelview;
     //modelview.translate(QVector3D(5.0, 5.0,-2.0));
@@ -116,5 +132,8 @@ void RenderScene::TakeDown()
     this->cubehandle_obj.TakeDown();
     this->bunny_obj.TakeDown();
     this->teapot_obj.TakeDown();
+    for (int i = 0; i < teapot_objs.size(); ++i)
+      teapot_objs[i].TakeDown();
+    teapot_objs.clear();
     //this->test1_pov.TakeDown();
 }

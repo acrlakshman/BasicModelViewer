@@ -86,6 +86,8 @@ public:
 	// Set object shininess parameter
 	void SetShininess(GLfloat &shininess_);
 
+        void SetVertexPositionsGlobalOffset(const QVector3D position_offset);
+
 	void show_wire_frame(bool swf_);
 	void show_normals(bool sn_);
 
@@ -113,6 +115,7 @@ private:
 	bool include_specular_;
 
 	QVector3D vertex_global_color;
+        QVector3D vertex_positions_global_offset;
 
 	/* bounding box */
 	bounding_box b_box_;
