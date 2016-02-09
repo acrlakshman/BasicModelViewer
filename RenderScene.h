@@ -76,6 +76,8 @@ private:
 
     /* Render EnSight generated POV */
     //RenderEnSightPOV test1_pov;
+
+    std::vector<QVector3D> positions_global_offset;
 };
 
 #endif // END OF __RENDERSCENE_H__

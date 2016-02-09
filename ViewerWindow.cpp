@@ -36,7 +36,7 @@ ViewerWindow::ViewerWindow(const QGLFormat &format, QWidget *parent) :
     this->camera_position = this->cam_position_initial;
     this->camera_lookat = this->cam_lookat_initial;
     this->camera_up = this->cam_up_initial;
-    fov_init = 14.000000; //45.0;
+    fov_init = 79.000000; //45.0;
     fov = fov_init;
     fov_min = 10.0;
     fov_max = 120.0;
@@ -58,7 +58,7 @@ ViewerWindow::~ViewerWindow()
 void ViewerWindow::timerEvent(QTimerEvent *)
 {
     this->time_ = clock() - this->time_;
-    this->angle_ += -500.0*(float)this->time_/CLOCKS_PER_SEC;
+    this->angle_ += -0.0*(float)this->time_/CLOCKS_PER_SEC;
     this->time_ = clock();
     //qDebug() << "angle_ = " << this->angle_;
     updateGL();
@@ -88,7 +88,7 @@ void ViewerWindow::initializeGL()
     this->render_scene.InitializeScene();
 
     // Start timer
-    timer.start(12, this);
+    timer.start(24, this);
 }
 
 void ViewerWindow::resizeGL(int w, int h)
@@ -130,7 +130,7 @@ void ViewerWindow::paintGL()
 
     QMatrix4x4 modelview = modelview_cam;
 
-    //modelview.rotate(this->angle_, QVector3D(0.0, 1.0, 0.0));
+    modelview.rotate(this->angle_, QVector3D(0.0, 1.0, 0.0));
     if (!this->render_scene.Draw(projection, modelview_cam, modelview, shaders_list.default_shaders[0]))
         close();
 

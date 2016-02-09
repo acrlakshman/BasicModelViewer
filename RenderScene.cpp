@@ -73,7 +73,7 @@ bool RenderScene::InitializeScene()
 
     // Initialize 50 teapots
     srand(time(NULL));
-    teapot_objs.resize(500);
+    teapot_objs.resize(1);
     for (int i = 0; i < teapot_objs.size(); ++i) {
       QVector3D obj_positions_offset = QVector3D(rand() % 100 - 50,
                                                  rand() % 100 - 50,
@@ -82,6 +82,13 @@ bool RenderScene::InitializeScene()
       if (!teapot_objs[i].LocalInitialize("../Resources/teapot.obj"))
         return false;
       obj_models.AddObj(&teapot_objs[i]);
+    }
+    int clones_max_count = 500000;
+    positions_global_offset.resize(clones_max_count);
+    for (int i = 0; i < clones_max_count; ++i) {
+        positions_global_offset[i] = QVector3D(rand() % 1000 - 500,
+                                               rand() % 1000 - 500,
+                                               rand() % 1000 - 500);
     }
 
     return true;
@@ -108,10 +115,15 @@ bool RenderScene::Draw(
     /*if (!this->bunny_obj.Draw(projection, modelview_cam, modelview, shader_))
         return false;*/
 
-    if (!this->obj_models.Draw(projection, modelview_cam, modelview, shader_))
-      return false;
-
     QMatrix4x4 mv_tmp_ = modelview;
+    int num_objects = positions_global_offset.size();
+    for (int i = 0; i < num_objects; ++i) {
+        modelview.translate(positions_global_offset[i]);
+        if (!this->obj_models.Draw(projection, modelview_cam, modelview, shader_))
+          return false;
+        modelview = mv_tmp_;
+    }
+
     //modelview.translate(QVector3D(5.0, 5.0,-2.0));
     /*if (!teapot_obj.Draw(projection, modelview_cam, modelview, shader_))
         return false;*/
