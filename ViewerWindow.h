@@ -114,6 +114,9 @@ private:
 
     /* Object for rendering the scene */
     RenderScene render_scene;
+
+    bool initialization_time_shown;
+    clock_t t_profile;
 };
 
 #endif // END OF __VIEWERWINDOW_H__

@@ -48,6 +48,8 @@ ViewerWindow::ViewerWindow(const QGLFormat &format, QWidget *parent) :
 
     time_ = clock();
     angle_ = 0;
+    initialization_time_shown = false;
+    t_profile = clock();
 }
 
 ViewerWindow::~ViewerWindow()
@@ -135,6 +137,10 @@ void ViewerWindow::paintGL()
         close();
 
     QVector2D size = QVector2D(640, 480);
+    if (!initialization_time_shown) {
+        qDebug() << "Time to render first frame = " << (double)(clock() - t_profile)/CLOCKS_PER_SEC;
+        initialization_time_shown = !initialization_time_shown;
+    }
 }
 
 void ViewerWindow::closeEvent(QCloseEvent *e)
