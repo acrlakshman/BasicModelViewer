@@ -4,7 +4,7 @@ Basic Model Viewer
 Basic Model Viewer (BMV) is a [Qt5] based visualization tool written in Modern OpenGL and
 currently support basic objects and .obj files.
 
-![Alt example figures](http://homepages.cae.wisc.edu/~anumolu/Projects/Applications/BasicModelViewer/cubehandle_teapot_poster)
+![Alt example figures](http://lakshmananumolu.com/Projects/Applications/BasicModelViewer/cubehandle_teapot_poster)
 Rendering two objects using Basic Model Viewer.
 
 Version
@@ -36,15 +36,12 @@ make
 Tested environment(s)
 ---------------------
 
-Currently developing on:
-
-    Mac OS X 10.11 [Graphics card: HD Graphics 4000]
-
 Tested on:
 
     Mac OS X 10.9 [Graphics card: HD Graphics 4000, Radeon HD 5750]
     Mac OS X 10.10 [Graphics card: HD Graphics 4000]
     Mac OS X 10.11 [Graphics card: HD Graphics 4000]
+    Mac OS X 10.14 [Graphics card: HD Graphics 4000]
 
 License
 -------
@@ -62,7 +59,7 @@ Acknowledgements
 
 [Andrew Seidl]
 
-[BMV Introduction]:http://acrlakshman.github.io/personal_website/Projects/Applications/BasicModelViewer/
+[BMV Introduction]:http://lakshmananumolu.com/Projects/Applications/BasicModelViewer/
 [Qt5]:http://qt-project.org/qt5
 [Hammad Mazhar]:https://github.com/hmazhar
 [Syoyo Fujita]:https://github.com/syoyo
